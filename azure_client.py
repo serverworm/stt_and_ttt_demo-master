@@ -2,6 +2,7 @@ import logging
 import json
 import requests
 import threading
+import streamlit as st
 import azure.cognitiveservices.speech as speechsdk
 
 logging.basicConfig(level=logging.INFO)
