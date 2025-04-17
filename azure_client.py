@@ -3,13 +3,12 @@ import json
 import requests
 import threading
 import azure.cognitiveservices.speech as speechsdk
-from config import AZURE_SPEECH_KEY, AZURE_REGION
 
 logging.basicConfig(level=logging.INFO)
 
 class AzureSpeechClient:
     def __init__(self):
-        self.speech_config = speechsdk.SpeechConfig(subscription=AZURE_SPEECH_KEY, region=AZURE_REGION)
+        self.speech_config = speechsdk.SpeechConfig(subscription=st.secrets["AZURE_SPEECH_KEY"], region=st.secrets["AZURE_SPEECH_REGION"])
         self.speech_config.speech_recognition_language = "ru-RU"
         self.speech_config.speech_synthesis_voice_name = "ru-RU-DmitryNeural"
 
